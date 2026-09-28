@@ -1,21 +1,21 @@
-from text_statistics import words_counter, characters_counter, sentence_counter
-from word_analysis import get_words_frequency, get_unique_words, most_common_words
+from text_analyzer import TextAnalyzer
 from file_handler import read_file
 
 text = read_file("sample.txt")
+analyzer = TextAnalyzer(text)
 print ('<-------Text Statistics------->')
 print('\n')
-print('Total Words: ', words_counter(text))
-print('Total Characters: ', characters_counter(text))
-print('Total Sentences: ', sentence_counter(text))
+print('Total Words: ', analyzer.words_counter())
+print('Total Characters: ', analyzer.characters_counter())
+print('Total Sentences: ', analyzer.sentence_counter())
 print('\n')
 print("<-------Word Analysis------->")
 print('\n')
-print('Words frequency: \n\n', get_words_frequency(text))
+print('Words frequency: \n\n', analyzer.words_frequency())
 print('\n')
-print('Unique Words: \n\n', get_unique_words(text))
+print('Unique Words: \n\n', analyzer.unique_words())
 print('\n')
-print('Common Words: \n\n', most_common_words(text))
+print('Common Words: \n\n', analyzer.common_words())
 
 
 

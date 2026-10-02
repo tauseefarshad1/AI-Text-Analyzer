@@ -1,5 +1,6 @@
 from text_analyzer import TextAnalyzer
 from file_handler import read_file
+from ai_analyzer import summarize
 
 text = read_file("sample.txt")
 analyzer = TextAnalyzer(text)
@@ -16,4 +17,8 @@ print('\n')
 print('Unique Words: \n\n', analyzer.unique_words())
 print('\n')
 print('Common Words: \n\n', analyzer.common_words())
-
+print('\n')
+print("<-------AI Analysis------->")
+print('\n')
+print("AI Summary:")
+print(summarize(text))
